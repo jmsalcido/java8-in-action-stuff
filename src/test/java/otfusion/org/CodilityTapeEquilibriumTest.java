@@ -20,4 +20,11 @@ public class CodilityTapeEquilibriumTest {
         // |0-2000| == 2000
         assertEquals(2000, test.solution(new int[] {0, 2000}));
     }
+
+    @Test
+    public void testSolutionWith3ElemsArray() throws Exception {
+        CodilityTapeEquilibrium test = new CodilityTapeEquilibrium();
+        assertEquals(0, test.solution(new int[] {1, 2, 3}));
+    }
+
 }
