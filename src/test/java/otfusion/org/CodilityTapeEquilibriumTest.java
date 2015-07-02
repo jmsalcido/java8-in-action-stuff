@@ -19,6 +19,7 @@ public class CodilityTapeEquilibriumTest {
         assertEquals(2000, test.solution(new int[] {1, 2001}));
         // |0-2000| == 2000
         assertEquals(2000, test.solution(new int[] {0, 2000}));
+        assertEquals(2000, test.solution(new int[] {4000, 2000}));
     }
 
     @Test
