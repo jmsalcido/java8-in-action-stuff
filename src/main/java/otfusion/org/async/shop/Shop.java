@@ -15,15 +15,10 @@ public class Shop {
     }
 
     public Future<Double> getPriceAsync(String product) {
-        CompletableFuture<Double> futurePrice = new CompletableFuture<>();
-        new Thread(() -> {
-            double price = getPrice(product);
-            futurePrice.complete(price);
-        }).start();
-        return futurePrice;
+        return CompletableFuture.supplyAsync(() -> calculatePrice(product));
     }
 
-    private double getPrice(String product) {
+    public double getPrice(String product) {
         return calculatePrice(product);
     }
 
@@ -33,4 +28,7 @@ public class Shop {
         return random.nextDouble() * product.charAt(0) + product.charAt(1);
     }
 
+    public String getName() {
+        return name;
+    }
 }
